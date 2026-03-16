@@ -1,0 +1,26 @@
+create 128k.txt business_1
+
+multiappend business_1 1 01  4k.txt 
+merge business_1
+
+
+multiappend business_1 1 01  32k.txt 
+merge business_1
+
+
+create business_1.txt business_2
+
+multiappend business_2 2 01 02  business_3.txt business_2.txt 
+merge business_2
+
+
+create business_1.txt business_3
+
+multiappend business_3 5 01 02 03 04 05 business_6.txt business_2.txt business_3.txt business_4.txt business_5.txt
+merge business_3
+
+create business_1.txt business_4
+
+multiappend business_4 10 01 02 03 04 05 06 07 08 09 10 business_11.txt business_2.txt business_3.txt business_4.txt business_5.txt business_6.txt business_7.txt business_8.txt business_9.txt business_10.txt
+
+merge business_4

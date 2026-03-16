@@ -1,0 +1,11 @@
+spark-submit \
+  --master spark://samhu2@fa25-cs425-5301.cs.illinois.edu \
+  run_pipeline.py \
+  --input /path/input.csv \
+  --tasks 5 \
+  --stage_files stage1.py stage2.py stage3.py \
+  --args "apple,banana" 3 1 \
+  --output /path/output_dir \
+  --aggregate_stage 2 \
+  #optional
+  --aggregate_key 0

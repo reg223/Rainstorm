@@ -1,0 +1,21 @@
+RainStorm 2 3 dummy SIGN_GUIDE Transform 3 dataset1.csv result.csv 1 0
+RainStorm 2 3 dummy SIGN_GUIDE Transform 3 dataset2.csv result.csv 1 0
+RainStorm 2 3 dummy SIGN_GUIDE Transform 3 dataset3.csv result3.csv 1 0
+kill_task 02 0
+
+pkill -f stream_main
+
+RainStorm 2 3 dummy hello dummy good dataset3.csv result.csv 1 0
+kill_task 03 1
+
+RainStorm 2 1 dummy hello Transform 3 dataset1.csv result.csv 0 1 100 10 90
+RainStorm 2 2 dummy hello Transform 3 dataset1.csv result.csv 0 1 100 80 90
+list_tasks
+
+
+RainStorm 2 3 Filter SIGN_GUIDE Transform 3 dataset3.csv result.csv 1 0
+RainStorm 2 3 Filter SIGN_GUIDE Transform 3 dataset1.csv result.csv 1 0
+RainStorm 2 3 Filter SIGN_GUIDE AggregateByKey 3 dataset2.csv result.csv 1 0
+
+
+pkill -f stream_main
